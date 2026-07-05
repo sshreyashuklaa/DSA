@@ -9,6 +9,7 @@ Print the element at the (size of the array - 1)th index, which corresponds to t
 
 /*BRUTE FORCE*/
 
+/*
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -29,4 +30,37 @@ int main()
     sort(arr, arr+n);
 
     cout<<"Largest element is: "<<arr[n-1];
+}
+*/
+
+/*BRUTE FORCE USING STL*/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int largestelement (vector<int>& nums)
+{
+    sort(nums.begin(), nums.end());
+    return nums[nums.size()-1];
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    vector<int> nums(n);
+
+    cout<<"Enter the elements: ";
+    for(int i=0; i<n; i++)
+    {
+        cin>>nums[i];
+    }
+
+    int result = largestelement(nums);
+
+    cout<<"The largest element is: "<<result;
 }
