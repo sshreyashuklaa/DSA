@@ -109,7 +109,7 @@ int main()
 }
 */
 
-/*OPTIMAL APPROACH USING STL*/
+/*OPTIMAL APPROACH USING VECTORS*/
 #include <iostream>
 #include <vector>
 #include <climits>
