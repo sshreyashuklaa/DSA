@@ -117,3 +117,46 @@ int main()
 
 }
 */
+
+/* ye optimal khudse likha par ye sahi nahi hai isme ham 2 baar loop chala rahe hai ek hi pass mai krenge tab hoga optimal*/
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    int arr[n];
+    cout<<"Enter the elements: ";
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
+
+    int max = INT_MIN;
+    int smax = INT_MIN;
+    for(int i=0; i<n; i++)
+    {
+        if(arr[i]>max)
+        {
+            max = arr[i];
+        }
+    }
+    for(int i=0; i<n; i++)
+    {
+        if(arr[i]>smax && arr[i]!=max)
+        {
+            smax = arr[i];
+        }
+    }
+    if(smax == INT_MIN)
+    {
+        cout<<"-1";
+    }
+    else{
+        cout<<"Second largest element is: "<<smax;
+    }
+}
