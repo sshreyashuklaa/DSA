@@ -118,7 +118,11 @@ int main()
 }
 */
 
-/* ye optimal khudse likha par ye sahi nahi hai isme ham 2 baar loop chala rahe hai ek hi pass mai krenge tab hoga optimal*/
+/* ye optimal khudse likha par ye sahi nahi hai isme ham 2 baar loop chala rahe hai ek hi pass mai krenge tab hoga optimal
+this is a more better approach but not optimal
+Perform a single traversal to find the smallest and largest elements in the array.
+After that, traverse the array again to find the element just greater than the smallest element (this will be the second smallest).
+Similarly, find the element just smaller than the largest element (this will be the second largest).
 #include <iostream>
 #include <climits>
 using namespace std;
@@ -158,5 +162,47 @@ int main()
     }
     else{
         cout<<"Second largest element is: "<<smax;
+    }
+}*/
+
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    int arr[n];
+    cout<<"Enter the elements: ";
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
+
+    int largest = INT_MIN;
+    int slargest = INT_MIN;
+
+    for(int i=0; i<n; i++)
+    {
+        if(arr[i]>largest)
+        {
+            slargest = largest;
+            largest = arr[i];
+        }
+        else if(arr[i]<largest && arr[i]>slargest)
+        {
+            slargest = arr[i];
+        }
+    }
+    if(slargest == INT_MIN)
+    {
+        cout<<"-1";
+    }
+    else
+    {
+        cout<<"Second largest element is: "<<slargest;
     }
 }
