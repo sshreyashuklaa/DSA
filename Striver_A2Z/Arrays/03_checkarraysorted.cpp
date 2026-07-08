@@ -37,6 +37,7 @@ int main()
 }
 */
 
+/*
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -74,4 +75,45 @@ int main()
     bool result = isArraySorted(nums);
 
     cout<<boolalpha<<result;
+}
+*/
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter the number of array elements: ";
+    cin>>n;
+
+    int arr[n];
+    cout<<"Enter the elements: ";
+    for(int i=0; i<n; i++)
+    cin>>arr[i];
+
+    int arr2[n];
+    for(int i=0; i<n; i++)
+    {
+        arr2[i]=arr[i];
+    }
+
+    sort(arr2,arr2+n);
+    bool sorted = true;
+
+    for(int i=0; i<n; i++)
+    {
+        if(arr[i]!=arr2[i])
+        sorted = false;
+    }
+
+    if(sorted == true)
+    {
+        cout<<"Sorted";
+    }
+    else
+    {
+        cout<<"Not sorted";
+    }
 }
