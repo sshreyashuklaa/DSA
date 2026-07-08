@@ -1,13 +1,15 @@
 /*
 Question: Largest Element in an Array
+
+Pattern: Sorting
+
 Approach: Brute Force (Sorting)
-Time Complexity: O(n log n)
-Space Complexity: O(1)
 Sort the array in ascending order.
 Print the element at the (size of the array - 1)th index, which corresponds to the largest element in the array.
-*/
 
-/*BRUTE FORCE*/
+Time Complexity: O(n log n)
+Space Complexity: O(1)
+*/
 
 /*
 #include <iostream>
@@ -33,7 +35,7 @@ int main()
 }
 */
 
-/*BRUTE FORCE USING STL
+/*BRUTE FORCE USING VECTORS
 
 #include <iostream>
 #include <vector>
@@ -69,13 +71,18 @@ int main()
 /*--------------------------------------OPTIMAL APPROACH-----------------------------------------------------------------*/
 
 /*OPTIMAL APPROACH
+Pattern: Linear Traversal
+
+Approach:
 Create a variable called max and initialize it with the value of the first element in the array.
 Use a for loop to iterate through the rest of the elements in the array.
 In each iteration, compare the current element with the max variable.
 If the current element is greater than the max value, update the max value with the current element's value.
 After completing the loop, print the max variable, which will hold the largest value in the array.
-Complexity: Time complexity: O(n) and Space complexity: O(1)
-Pattern: Linear traversal*/
+
+Complexity:
+Time complexity: O(n)
+Space complexity: O(1)
 
 /*
 #include <iostream>

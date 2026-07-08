@@ -1,4 +1,19 @@
 /*
+Question: Check if array is sorted.
+
+Pattern: Nested loops and pairwise comparison
+
+Approach:
+1. Assume the array is sorted by initializing a boolean variable `sorted` as `true`.
+2. Traverse the array using the first loop.
+3. For each element, compare it with all the elements after it using the second loop.
+4. If any element is found to be greater than a later element (`arr[i] > arr[j]`), set `sorted` to `false`.
+5. After all comparisons, if `sorted` is `true`, the array is sorted; otherwise, it is not sorted.
+
+Complexity:
+Time Complexity: O(n²)
+Space Complexity: O(1)
+
 #include <iostream>
 using namespace std;
 
@@ -37,7 +52,7 @@ int main()
 }
 */
 
-/*
+/* BRUTE FORCE USING VECTORS
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -79,7 +94,20 @@ int main()
 */
 
 
-/*
+/* BETTER APPROACH
+Pattern: Sorting and comparison
+
+Approach:
+1. Create a copy of the original array.
+2. Sort the copied array in ascending order.
+3. Compare each element of the original array with the corresponding element of the sorted array.
+4. If all the elements match, the array is sorted.
+5. If any element does not match, the array is not sorted.
+
+Complexity:
+Time Complexity: O(n log n)
+Space Complexity: O(n)
+
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -121,7 +149,20 @@ int main()
 }
 */
 
-/*
+/* OPTIMAL APPROACH
+
+Pattern: Linear traversal (Single Pass)
+
+Approach:
+A sorted array follows the property that every previous element is smaller than or equal to the current element.
+Traverse the array from the second element to the last element and compare each element with its previous element.
+If the previous element is greater than the current element, the array is not sorted.
+If the entire array is traversed without violating this condition, the array is sorted.
+
+Complexity:
+Time Complexity: O(n)
+Space Complexity: O(1)
+
 #include <iostream>
 using namespace std;
 
@@ -160,6 +201,7 @@ int main()
 */
 /*Remember: jab ham arr[i] ko arr[i+1] se compare krte hai loop hamesha n-1 tk chalega*/
 
+/* OPTIMAL APPROACH USING STL*/
 #include <iostream>
 #include <vector>
 using namespace std;

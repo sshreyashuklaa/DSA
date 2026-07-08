@@ -5,7 +5,7 @@ Pattern:
 -> Sorting
 -> Reverse Traversal
 
-Approach:
+Brute Approach:
 1. Sort the array.
 2. Store the largest element.
 3. Traverse from the end.
@@ -20,8 +20,6 @@ Learning:
 -> First distinct element from the end is the second largest.
 -> Sorting is not necessary for the optimal solution.
 */
-
-
 
 /*
 #include <iostream>
@@ -120,9 +118,21 @@ int main()
 
 /* ye optimal khudse likha par ye sahi nahi hai isme ham 2 baar loop chala rahe hai ek hi pass mai krenge tab hoga optimal
 this is a more better approach but not optimal
-Perform a single traversal to find the smallest and largest elements in the array.
-After that, traverse the array again to find the element just greater than the smallest element (this will be the second smallest).
-Similarly, find the element just smaller than the largest element (this will be the second largest).
+
+Better Approach
+
+Pattern: 
+Linear traversal (two pass)
+
+Approach:
+1. Traverse the array once to find the largest element.
+2. Traverse the array again to find the largest element that is smaller than the largest.
+3. If no such element exists, return -1.
+
+Complexity:
+Time complexity: O(n)
+Space complexity: O(1)
+
 #include <iostream>
 #include <climits>
 using namespace std;
@@ -165,6 +175,24 @@ int main()
     }
 }*/
 
+
+/* Optimal approach*/
+/* Pattern: Linear traversal (Single pass)
+
+Approach:
+1. Initialize largest and secondLargest with INT_MIN.
+2. Traverse the array only once.
+3. If the current element is greater than largest:
+      secondLargest = largest
+      largest = current element
+4. Otherwise, if the current element is smaller than largest but greater than secondLargest:
+      secondLargest = current element
+5. If secondLargest is not updated, return -1.
+
+Complexity:
+Time complexity: O(n)
+Space complexity: O(1)
+*/
 #include <iostream>
 #include <climits>
 using namespace std;
