@@ -78,6 +78,8 @@ int main()
 }
 */
 
+
+/*
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -116,4 +118,81 @@ int main()
     {
         cout<<"Not sorted";
     }
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    int arr[n];
+    cout<<"Enter the array elements: ";
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
+
+    bool sorted = true;
+
+    for(int i=0; i<n-1; i++)
+    {
+        if(arr[i]>arr[i+1])
+        {
+            sorted = false;
+        }
+    }
+
+    if(sorted == true)
+    {
+        cout<<"Array is sorted";
+    }
+    else
+    {
+        cout<<"Array is not sorted";
+    }
+}
+*/
+/*Remember: jab ham arr[i] ko arr[i+1] se compare krte hai loop hamesha n-1 tk chalega*/
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+bool isarraysorted(vector<int>& nums)
+{
+    bool sorted = true;
+
+    for(int i=0; i<nums.size()-1; i++)
+    {
+        if(nums[i]>nums[i+1])
+        {
+            sorted = false;
+        }
+    }
+    return sorted;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the number of elements: ";
+    cin>>n;
+
+    vector<int> nums(n);
+
+    cout<<"Enter the elements: ";
+    for(int i=0; i<n; i++)
+    {
+        cin>>nums[i];
+    }
+
+    bool result = isarraysorted(nums);
+
+    cout<<boolalpha<<result;
 }
